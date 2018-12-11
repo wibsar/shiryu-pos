@@ -1,0 +1,298 @@
+﻿<Page x:Class="Seiya.EndSalesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Seiya"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance local:EndSalesPageViewModel}"
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="EndSalesPage"
+  >
+    <Page.Resources>
+        <Style TargetType="Page">
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="TextAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Foreground" Value="#2C5066" />
+        </Style>
+
+    </Page.Resources>
+
+
+    <Grid ShowGridLines="false" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".5*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <TextBlock Grid.Column="0" Text="CORTE DE CAJA" FontSize="24" VerticalAlignment="Center"></TextBlock>
+
+
+        <!-- Users input for quantities -->
+        <Grid Grid.Row="1" Grid.Column="0" Margin="5,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!-- Pesos GRID -->
+            <Grid Grid.Column="0" Grid.Row="0" Margin="0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#FFB4E3FF"></SolidColorBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock Grid.Row="0" TextAlignment="Center" Text="PESOS" FontSize="18" FontWeight="Bold" Foreground="#FF383838" Margin="0,4,0,0" VerticalAlignment="Top"/>
+                <TextBlock Grid.Row="1" TextAlignment="Right" Text="$ 1,000  x " ></TextBlock>
+                <TextBlock Grid.Row="2" TextAlignment="Right" Background="#FFECECEC" Text="$ 500  x "></TextBlock>
+                <TextBlock Grid.Row="3" TextAlignment="Right" Text="$ 200  x " ></TextBlock>
+                <TextBlock Grid.Row="4" TextAlignment="Right" Background="#FFECECEC" Text="$ 100  x " ></TextBlock>
+                <TextBlock Grid.Row="5" TextAlignment="Right" Text="$ 50  x " ></TextBlock>
+                <TextBlock Grid.Row="6" TextAlignment="Right" Background="#FFECECEC" Text="$ 20  x " ></TextBlock>
+                <TextBlock Grid.Row="7" TextAlignment="Right" Text="Monedas " FontWeight="Bold" ></TextBlock>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="0" Margin="0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28*"></RowDefinition>
+                    <RowDefinition Height="29*"></RowDefinition>
+                    <RowDefinition Height="28*"></RowDefinition>
+                    <RowDefinition Height="29*"></RowDefinition>
+                    <RowDefinition Height="28*"></RowDefinition>
+                    <RowDefinition Height="29"></RowDefinition>
+                    <RowDefinition Height="28*"></RowDefinition>
+                    <RowDefinition Height="29*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" >
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#FFB4E3FF"></SolidColorBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock Grid.Row="0" TextAlignment="Center" FontWeight="Bold" Text="CANTIDAD" FontSize="18" Foreground="#FF383838"/>
+                <TextBox Grid.Row="1" Text="{Binding MxnPeso1000, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Grid.Row="2" Text="{Binding MxnPeso500, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC"></TextBox>
+                <TextBox Grid.Row="3" Text="{Binding MxnPeso200, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Grid.Row="4" Text="{Binding MxnPeso100, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC" TextChanged="TextBox_TextChanged"></TextBox>
+                <TextBox Grid.Row="5" Text="{Binding MxnPeso50, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Grid.Row="6" Text="{Binding MxnPeso20, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC"></TextBox>
+                <TextBox Grid.Row="7" Text="{Binding MxnPesoCoinsTotal}" BorderBrush="#FF0073B6" BorderThickness="2px"></TextBox>
+            </Grid>
+            <!-- USD panel -->
+            <Grid Grid.Column="0" Grid.Row="1" Margin="0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" >
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#FFB8F0B0"></SolidColorBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock Grid.Row="0" TextAlignment="Center" FontWeight="Bold" Text="DOLAR" FontSize="18" Foreground="#FF383838"/>
+                <TextBlock Grid.Row="1"  TextAlignment="Right" Text="$ 100  x "></TextBlock>
+                <TextBlock Grid.Row="2"  TextAlignment="Right" Background="#FFECECEC" Text="$ 50  x "></TextBlock>
+                <TextBlock Grid.Row="3"  TextAlignment="Right" Text="$ 20  x "></TextBlock>
+                <TextBlock Grid.Row="4"  TextAlignment="Right" Background="#FFECECEC" Text="$ 10  x "></TextBlock>
+                <TextBlock Grid.Row="5"  TextAlignment="Right" Text="$ 5  x "></TextBlock>
+                <TextBlock Grid.Row="6"  TextAlignment="Right" Background="#FFECECEC" Text="$ 1  x "></TextBlock>
+                <TextBlock Grid.Row="7"  TextAlignment="Right" Text="Monedas " FontWeight="Bold" Foreground="#FF590C0C"></TextBlock>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="1" Margin="0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" >
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#FFB8F0B0"></SolidColorBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock Grid.Row="0" TextAlignment="Center" FontWeight="Bold" Text="CANTIDAD" Foreground="#FF383838"/>
+                <TextBox Grid.Row="1" Text="{Binding UsdDollar100, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Grid.Row="2" Text="{Binding UsdDollar50, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC"></TextBox>
+                <TextBox Grid.Row="3" Text="{Binding UsdDollar20, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Grid.Row="4" Text="{Binding UsdDollar10, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC"></TextBox>
+                <TextBox Grid.Row="5" Text="{Binding UsdDollar5, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Grid.Row="6" Text="{Binding UsdDollar1, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC"></TextBox>
+                <TextBox Grid.Row="7" Text="{Binding UsdDollarCoinsTotal}" BorderBrush="#FF1CCD00" BorderThickness="2px"></TextBox>
+            </Grid>
+        </Grid>
+
+        <!-- Sales data based on sales by type and expenses -->
+        <Grid Grid.Row="1" Grid.Column="1" Margin="20,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height=".1*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height=".5*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Pagos en Efectivo:"></TextBlock>
+                <TextBlock Grid.Row="1" Text="Pagos con Tarjeta:" ></TextBlock>
+                <TextBlock Grid.Row="2" Text="Pagos con Cheque:" ></TextBlock>
+                <TextBlock Grid.Row="3" Text="Pagos por Transferencia:" ></TextBlock>
+                <TextBlock Grid.Row="4" Background="#FFD4D4D4" Height="1"></TextBlock>
+                <TextBlock Grid.Row="5" Text="Gastos Totales:" ></TextBlock>
+                <TextBlock Grid.Row="6" Text="Gastos Efectivo:" ></TextBlock>
+                <TextBlock Grid.Row="7" Text="Devoluciones Efectivo:" ></TextBlock>
+                <TextBlock Grid.Row="8" Text="Devoluciones Tarjeta:" ></TextBlock>
+                <TextBlock Grid.Row="9" Text="Caja Turno Anterior:"/>
+                <TextBlock Grid.Row="10" Text="Balance de Efectivo" ></TextBlock>
+                <TextBlock Grid.Row="11" Text="Diferencia"/>
+                <TextBlock Grid.Row="12" Text="Puntos Usados:" ></TextBlock>
+                <Rectangle Grid.Row="13">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#FFF0F0F0"></SolidColorBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock Grid.Row="13" Text="Caja Chica Nueva" Foreground="DarkRed"></TextBlock>
+
+
+            </Grid>
+
+            <Grid Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height=".1*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height=".5*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{Binding CashTotalSales, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="1" Text="{Binding CardTotalSales, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="2" Text="{Binding CheckTotalSales, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="3" Text="{Binding BankTransferTotalSales, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="4" Background="#FFD4D4D4" Height="1"></TextBlock>
+                <TextBlock Grid.Row="5" Text="{Binding ExpensesTotal, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="6" Text="{Binding ExpensesCashTotal, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="7" Text="{Binding ReturnsCashTotal, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="8" Text="{Binding ReturnsCardTotal, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="9" Text="{Binding RegisterPreviousCash, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="10" Text="{Binding MxnCashBalance, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="11" Text="{Binding Delta, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="12" Text="{Binding PointsTotalUsed}"></TextBlock>
+                <TextBox Grid.Row="13" Text="{Binding RegisterNewCash, UpdateSourceTrigger=PropertyChanged, StringFormat='${0}'}" FontWeight="Bold" Foreground="DarkRed" BorderBrush="DarkRed" TextAlignment="Left" ></TextBox>
+
+            </Grid>
+        </Grid>
+
+        <!-- User Comments field -->
+        <Grid Grid.Row="2" Grid.Column="0" Margin="5,5,0,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Row="0" >
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="#FFFFBDBD"></SolidColorBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Grid.Row="0" TextAlignment="Center" Text="COMENTARIOS" FontWeight="Bold" Foreground="#FF383838"/>
+            <TextBox Grid.Row="1" Text="{Binding Comments, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" TextWrapping="Wrap" TextAlignment="Left"></TextBox>
+        </Grid>
+
+        <!-- Buttons for sales report type -->
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"  Command="{Binding GenerateEndOfDaySalesReportCommand}" CommandParameter="x" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="/Seiya;component/Resources/Images/Cortex.png"></Image>
+                    <TextBlock Grid.Row="1" FontFamily="/Seiya;component/Resources/Fonts/#Comfortaa" FontSize="16" HorizontalAlignment="Center" Text="Corte X"></TextBlock>
+                </Grid>
+            </Button>
+            <Button Grid.Column="1" BorderBrush="{x:Null}" Command="{Binding GenerateEndOfDaySalesReportCommand}" CommandParameter="z" Background="{x:Null}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="C:\Projects\seiya-pos\Resources\Images\Cortez.png"></Image>
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontSize="16" Text="Corte Z"></TextBlock>
+                </Grid>
+            </Button>
+
+
+        </Grid>
+    </Grid>
+</Page>

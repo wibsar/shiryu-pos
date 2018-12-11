@@ -12,7 +12,7 @@ using System.Windows.Input;
 using Athena;
 using Athena.WpfBindingUtilities;
 
-namespace Seiya
+namespace Shiryu
 {
     public class CarRegistrationViewModel : ObservableObject
     {

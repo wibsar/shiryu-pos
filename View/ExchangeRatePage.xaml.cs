@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Athena;
 
-namespace Seiya
+namespace Shiryu
 {
     public partial class ExchangeRatePage : Page
     {

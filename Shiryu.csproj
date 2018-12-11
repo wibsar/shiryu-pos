@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8173DDBC-BAAC-43A1-B1DA-F819DBD5DDA6}</ProjectGuid>
+    <ProjectGuid>{355E44DA-95A8-41FD-BE7F-C1AD48F5417C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Seiya</RootNamespace>
     <AssemblyName>Seiya</AssemblyName>
@@ -466,7 +466,7 @@
     <Resource Include="Resources\Images\Transacciones.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\athena-pos\Athena\Athena.csproj">
+    <ProjectReference Include="..\athena-pos\Athena.csproj">
       <Project>{45602a13-6cc9-49e3-aa85-1173bdc160f2}</Project>
       <Name>Athena</Name>
     </ProjectReference>

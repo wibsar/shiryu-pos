@@ -3,8 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Seiya"
-      xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Seiya.LoginPage"
+      xmlns:local="clr-namespace:Shiryu"
+      xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Shiryu.LoginPage"
       mc:Ignorable="d" 
       d:DataContext="{d:DesignInstance {x:Type local:MainWindowViewModel}}"
       d:DesignHeight="600" d:DesignWidth="800"
@@ -12,7 +12,7 @@
     <Page.Resources>
         <Style TargetType="{x:Type Page}">
             <Setter Property="Foreground" Value="#2C5066" />
-            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"/>
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"/>
             <Setter Property="Background" Value="White"/>
         </Style>
         <Style TargetType="{x:Type Button}">
@@ -21,18 +21,18 @@
             <Setter Property="Background" Value="White"/>
         </Style>
         <Style TargetType="{x:Type TextBox}">
-            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"/>
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="18"/>
         </Style>
         <Style TargetType="{x:Type TextBlock}">
-            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"/>
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
         <Style TargetType="{x:Type PasswordBox}">
-            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"/>
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="Foreground" Value="#2C5066" />
@@ -48,7 +48,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" Source="C:\Projects\seiya-pos\Resources\Images\Logo Wibsar Retail.png" MaxWidth="500" Margin="50"/>
+        <Image Grid.Row="0" Source="..\Resources\Images\Logo Wibsar Retail.png" MaxWidth="500" Margin="50"/>
         <TextBlock Grid.Row="1" Text="Iniciar Sesión" Foreground="#2C5066" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26"/>
         <Grid Grid.Row="2" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>

@@ -1,9 +1,9 @@
-﻿<Page x:Class="Seiya.ExpenseDetailPage"
+﻿<Page x:Class="Shiryu.ExpenseDetailPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Seiya"
+      xmlns:local="clr-namespace:Shiryu"
       mc:Ignorable="d" 
       d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
       d:DesignHeight="600" d:DesignWidth="800"
@@ -12,7 +12,7 @@
     <Page.Resources>
         <Style TargetType="Page">
             <Setter Property="Foreground" Value="#2C5066" />
-            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="Button">
@@ -20,12 +20,12 @@
             <Setter Property="FontSize" Value="14"></Setter>
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
             <Setter Property="FontSize" Value="18"></Setter>
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="FontSize" Value="18"></Setter>
             <Setter Property="Foreground" Value="#2C5066" />
@@ -87,8 +87,8 @@
                 <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding ExpenseTemporalItem.TicketNumber}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding ExpenseTemporalItem.Description}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text="{Binding ExpenseTemporalItem.Amount, StringFormat='${0}'}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
-                <ComboBox Grid.Row="6" Grid.Column="1" Margin="5" ItemsSource="{Binding CurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding ExpenseTemporalItem.CurrencyType, Mode=TwoWay}" FontSize="20" VerticalContentAlignment="Center" FontFamily="/Seiya;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
-                <ComboBox Grid.Row="7" Grid.Column="1" Margin="5" ItemsSource="{Binding PaymentTypes, Mode=TwoWay}" SelectedItem="{Binding ExpenseTemporalItem.PaymentType, Mode=TwoWay}" FontSize="20" VerticalContentAlignment="Center" FontFamily="/Seiya;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
+                <ComboBox Grid.Row="6" Grid.Column="1" Margin="5" ItemsSource="{Binding CurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding ExpenseTemporalItem.CurrencyType, Mode=TwoWay}" FontSize="20" VerticalContentAlignment="Center" FontFamily="/Shiryu;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
+                <ComboBox Grid.Row="7" Grid.Column="1" Margin="5" ItemsSource="{Binding PaymentTypes, Mode=TwoWay}" SelectedItem="{Binding ExpenseTemporalItem.PaymentType, Mode=TwoWay}" FontSize="20" VerticalContentAlignment="Center" FontFamily="/Shiryu;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
                 <TextBox Grid.Row="8" Grid.Column="1" Margin="5" Text="{Binding ExpenseTemporalItem.ExpenseCategory}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
             </Grid>
         </Grid>
@@ -107,7 +107,7 @@
                         <RowDefinition Height="3*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="C:\Projects\seiya-pos\Resources\Images\Cancel.png" ></Image>
+                    <Image Grid.Row="0" Source="..\Resources\Images\Cancel.png" ></Image>
                     <TextBlock HorizontalAlignment="Center" Grid.Row="1" Text="Cancelar"></TextBlock>
                 </Grid>
             </Button>
@@ -117,7 +117,7 @@
                         <RowDefinition Height="3*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="C:\Projects\seiya-pos\Resources\Images\delete.png"></Image>
+                    <Image Grid.Row="0" Source="..\Resources\Images\delete.png"></Image>
                     <TextBlock Grid.Row="1" Text="Eliminar" HorizontalAlignment="Center"></TextBlock>
                 </Grid>
             </Button>
@@ -127,7 +127,7 @@
                         <RowDefinition Height="3*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="C:\Projects\seiya-pos\Resources\Images\Guardar.png"></Image>
+                    <Image Grid.Row="0" Source="..\Resources\Images\Guardar.png"></Image>
                     <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Guardar"></TextBlock>
                 </Grid>
             </Button>

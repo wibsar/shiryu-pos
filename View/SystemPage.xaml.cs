@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Athena;
 
-namespace Seiya
+namespace Shiryu
 {
     /// <summary>
     /// Lógica de interacción para Page1.xaml

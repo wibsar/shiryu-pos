@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Seiya
+namespace Shiryu
 {
     /// <summary>
     /// Interaction logic for ProductListControl.xaml

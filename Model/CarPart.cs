@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using Athena;
 
-namespace Seiya
+namespace Shiryu
 {
     /// <summary>
     /// Class for products to be used in the inventory and point of sale system

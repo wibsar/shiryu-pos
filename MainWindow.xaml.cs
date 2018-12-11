@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Athena;
 
-namespace Seiya
+namespace Shiryu
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

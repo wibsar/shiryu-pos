@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Seiya.Properties
+namespace Shiryu.Properties
 {
 
 

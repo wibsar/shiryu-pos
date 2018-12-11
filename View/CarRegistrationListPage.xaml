@@ -1,9 +1,9 @@
-﻿<Page x:Class="Seiya.CarRegistrationListPage"
+﻿<Page x:Class="Shiryu.CarRegistrationListPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Seiya"
+      xmlns:local="clr-namespace:Shiryu"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1000"
       d:DataContext="{d:DesignInstance local:CarRegistrationViewModel}"
@@ -12,7 +12,7 @@
         <Style TargetType="{x:Type DataGrid}">
             <Setter Property="Background" Value="#FFF" />
             <Setter Property="Foreground" Value="#2C5066" />
-            <Setter Property="FontFamily" Value="/Seiya;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="AlternationCount" Value="2" />
             <Setter Property="VerticalGridLinesBrush" Value="#FFE8E8E8"></Setter>
             <Setter Property="HorizontalGridLinesBrush" Value="{x:Null}"></Setter>

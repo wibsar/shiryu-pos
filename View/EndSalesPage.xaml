@@ -278,7 +278,7 @@
                         <RowDefinition Height="4*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="/Shiryu;component/Resources/Images/Cortex.png"></Image>
+                    <Image Grid.Row="0" Source="../Resources/Images/Cortex.png"></Image>
                     <TextBlock Grid.Row="1" FontFamily="/Shiryu;component/Resources/Fonts/#Comfortaa" FontSize="16" HorizontalAlignment="Center" Text="Corte X"></TextBlock>
                 </Grid>
             </Button>

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Shiryu"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="1000"
+      d:DesignHeight="1080" d:DesignWidth="1920"
       d:DataContext="{d:DesignInstance local:CarRegistrationViewModel}"
       Title="CarRegistrationList">
     <Page.Resources>
@@ -16,6 +16,7 @@
             <Setter Property="AlternationCount" Value="2" />
             <Setter Property="VerticalGridLinesBrush" Value="#FFE8E8E8"></Setter>
             <Setter Property="HorizontalGridLinesBrush" Value="{x:Null}"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
         </Style>
         <Style TargetType="{x:Type DataGridRow}">
             <Setter Property="Height" Value="25"></Setter>
@@ -36,6 +37,19 @@
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="Height" Value="25"></Setter>
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Background" Value="#FFF" />
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>            
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FFF" />
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
     </Page.Resources>
 
     <Grid Background="White">
@@ -45,9 +59,9 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height=".5*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="7*"></RowDefinition>
-            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <!-- Header with search product -->
@@ -74,21 +88,17 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="A" Command="{Binding SearchListCommand}" CommandParameter="a"></Button>
-            <Button Grid.Column="1" Content="B" Command="{Binding SearchListCommand}" CommandParameter="b"></Button>
-            <Button Grid.Column="2" Content="C" Command="{Binding SearchListCommand}" CommandParameter="c"></Button>
-            <Button Grid.Column="3" Content="D" Command="{Binding SearchListCommand}" CommandParameter="d"></Button>
-            <Button Grid.Column="4" Content="E" Command="{Binding SearchListCommand}" CommandParameter="e"></Button>
-            <Button Grid.Column="5" Content="F" Command="{Binding SearchListCommand}" CommandParameter="f"></Button>
-            <Button Grid.Column="6" Content="G" Command="{Binding SearchListCommand}" CommandParameter="g"></Button>
-            <Button Grid.Column="7" Content="H" Command="{Binding SearchListCommand}" CommandParameter="h"></Button>
+            <Button Grid.Column="0" Content="A" Command="{Binding SearchListCommand}" CommandParameter="a" Height="80"></Button>
+            <Button Grid.Column="1" Content="B" Command="{Binding SearchListCommand}" CommandParameter="b" Height="80"></Button>
+            <Button Grid.Column="2" Content="C" Command="{Binding SearchListCommand}" CommandParameter="c" Height="80"></Button>
+            <Button Grid.Column="3" Content="D" Command="{Binding SearchListCommand}" CommandParameter="d" Height="80"></Button>
+            <Button Grid.Column="4" Content="E" Command="{Binding SearchListCommand}" CommandParameter="e" Height="80"></Button>
+            <Button Grid.Column="5" Content="F" Command="{Binding SearchListCommand}" CommandParameter="f" Height="80"></Button>
+            <Button Grid.Column="6" Content="G" Command="{Binding SearchListCommand}" CommandParameter="g" Height="80"></Button>
+            <Button Grid.Column="7" Content="H" Command="{Binding SearchListCommand}" CommandParameter="h" Height="80"></Button>
         </Grid>
-        <Grid Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="311*"/>
-                <ColumnDefinition Width="689*"/>
-            </Grid.ColumnDefinitions>
-            <DataGrid x:Name="CarAccessoriesData" Margin="0,6,0,0" HeadersVisibility="Column" ItemsSource="{Binding CarPartsSearchedEntries}" SelectedItem="{Binding SelectedCarPart, Mode =TwoWay}" CanUserSortColumns="False" CanUserReorderColumns="False" AutoGenerateColumns="False" BorderBrush="{x:Null}" SelectionMode="Single" Grid.ColumnSpan="2">
+        <Grid Row="2">            
+            <DataGrid x:Name="CarAccessoriesData" Margin="0,6,0,0" HeadersVisibility="Column" ItemsSource="{Binding CarPartsSearchedEntries}" SelectedItem="{Binding SelectedCarPart, Mode =TwoWay}" CanUserSortColumns="False" CanUserReorderColumns="False" AutoGenerateColumns="False" BorderBrush="{x:Null}" SelectionMode="Single">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="*" Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header=" Id" IsReadOnly="True"/>
                     <DataGridTextColumn Width="3*" Binding="{Binding Vin}" ClipboardContentBinding="{x:Null}" Header=" Vin" IsReadOnly="True"/>
@@ -111,56 +121,62 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" HorizontalAlignment="Left" Margin="20,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding ImportExportCarCommand}" CommandParameter="import">
-                    <Image Source="..\Resources\Images\Export.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" FontSize="16" Text="Exportar" ></TextBlock>
-            </Grid>
-            <Grid Grid.Column="1" HorizontalAlignment="Left" Margin="20,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding ImportExportCarCommand}" CommandParameter="export">
-                    <Image Source="..\Resources\Images\Export.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" FontSize="16" Text="Importar" ></TextBlock>
-            </Grid>
-            <Grid Grid.Column="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding ChangePageCommand}" CommandParameter="car_main">
+                
+            <Button Grid.Column="0" Margin="20,0,20,0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ImportExportCarCommand}" CommandParameter="import">                
+                 <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                        <Image Source="..\Resources\Images\export.png"></Image>
+                        <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Exportar" ></TextBlock>
+                 </Grid>                
+            </Button>
+
+            <Button Grid.Column="1" Margin="20,0,20,0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ImportExportCarCommand}" CommandParameter="import">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Import.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Importar" ></TextBlock>
+                </Grid>
+            </Button>
+
+            <Button Grid.Column="3" Margin="20,0,20,0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ChangePageCommand}" CommandParameter="car_main">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Cancel.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" Text="Cancelar"></TextBlock>
-            </Grid>
-            <Grid Grid.Column="4">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding ViewDetailsPartCommand}">
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Cancelar" ></TextBlock>
+                </Grid>
+            </Button>
+
+            <Button Grid.Column="4" Margin="20,0,20,0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ViewDetailsPartCommand}">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Detalles.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" Text="Detalle"></TextBlock>
-            </Grid>
-            <Grid Grid.Column="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="17"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding RegisterCarCommand}" CommandParameter="inventory_add">
-                    <Image Source="..\Resources\Images\agregar.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" Text="Registrar"></TextBlock>
-            </Grid>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Detalle" ></TextBlock>
+                </Grid>
+            </Button>
+            
+            <Button Grid.Column="5" Margin="20,0,20,0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding RegisterCarCommand}" CommandParameter="inventory_add">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Guardar.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Registrar" ></TextBlock>
+                </Grid>
+            </Button>
+            
         </Grid>
     </Grid>
 </Page>

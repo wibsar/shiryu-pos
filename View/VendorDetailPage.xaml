@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Shiryu"
       xmlns:athena="clr-namespace:Athena;assembly=Athena"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="950" d:DesignWidth="1280"
       d:DataContext="{d:DesignInstance athena:MainWindowViewModel}"
       Title="VendorDetailPage">
 
@@ -18,18 +18,18 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
     </Page.Resources>
@@ -39,13 +39,13 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".5*"></RowDefinition>
-            <RowDefinition Height="8*"></RowDefinition>
-            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <!-- header -->
-        <TextBlock Grid.Row="0" Text="PROVEEDOR" FontSize="24"></TextBlock>
+        <TextBlock Grid.Row="0" Text="PROVEEDOR" FontSize="24" Margin="20,0"></TextBlock>
 
 
         <Grid Grid.Row="1" Background="White" Margin="5">
@@ -71,10 +71,11 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
 
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" FontSize="18" Foreground="Gray" Grid.ColumnSpan="2" Text="Registro de Proveedor" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="0" Foreground="Gray" Grid.ColumnSpan="2" Text="Registro de Proveedor" HorizontalAlignment="Center"></TextBlock>
                 <TextBlock Grid.Row="1" Text="Nombre"></TextBlock>
                 <TextBlock Grid.Row="2" Text="Correo Electrónico"></TextBlock>
                 <TextBlock Grid.Row="3" Text="Teléfono"></TextBlock>
@@ -92,7 +93,7 @@
                 <TextBox Grid.Row="7" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.BankAccount}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
             </Grid>
         </Grid>
-
+        <!-- footer menu -->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
@@ -101,37 +102,37 @@
                 <ColumnDefinition Width="*"/>
 
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Command="{Binding ChangePageCommand}" CommandParameter="vendors" Background="{x:Null}" BorderBrush="{x:Null}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="..\Resources\Images\Cancel.png" ></Image>
-                    <TextBlock  Grid.Row="1" Text="Cancelar"></TextBlock>
+            <Button Grid.Column="1" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ChangePageCommand}" CommandParameter="vendors" HorizontalAlignment="Center" Width="200" Margin="5">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Cancel.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Cancelar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Command="{Binding VendorDeleteCommand}" Background="{x:Null}" BorderBrush="{x:Null}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="..\Resources\Images\delete.png"></Image>
-                    <TextBlock Grid.Row="1" Text="Eliminar" ></TextBlock>
+            <Button Grid.Column="2" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding VendorDeleteCommand}" HorizontalAlignment="Center" Width="200" Margin="5">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Delete.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Eliminar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Command="{Binding VendorSaveChangesCommand}" Background="{x:Null}" BorderBrush="{x:Null}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="..\Resources\Images\Guardar.png"></Image>
-                    <TextBlock Grid.Row="1" Text="Guardar"></TextBlock>
+            <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding VendorSaveChangesCommand}"  Width="200" Margin="5" >
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\guardar.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Guardar" ></TextBlock>
                 </Grid>
             </Button>
-
         </Grid>
+        
     </Grid>
 </Page>

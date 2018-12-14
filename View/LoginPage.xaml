@@ -9,7 +9,7 @@
       x:Class="Shiryu.LoginPage"
       mc:Ignorable="d" 
       d:DataContext="{d:DesignInstance {x:Type athena:MainWindowViewModel}}"
-      d:DesignHeight="600" d:DesignWidth="800"
+     d:DesignHeight="950" d:DesignWidth="1280"
       Title="LoginPage">
     <Page.Resources>
         <Style TargetType="{x:Type Page}">
@@ -51,8 +51,9 @@
             <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Source="..\Resources\Images\Logo Wibsar Retail.png" MaxWidth="500" Margin="50"/>
-        <TextBlock Grid.Row="1" Text="Iniciar Sesión" Foreground="#2C5066" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26"/>
-        <Grid Grid.Row="2" HorizontalAlignment="Center">
+        <TextBlock Grid.Row="1" Text="Iniciar Sesión" Foreground="#2C5066" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="26"/>
+        <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+              >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -70,7 +71,7 @@
             <PasswordBox Grid.Column="1" x:Name="LoginPasswordBox" PasswordChar="•" VerticalContentAlignment="Center" PasswordChanged="LoginPasswordBox_OnPasswordChanged" HorizontalAlignment="Left" Width="200" Height="30" Margin="10,0,0,0"></PasswordBox>
         </Grid>
         <TextBlock Grid.Row="4" Text="{Binding LoginMessage, Mode=TwoWay}" HorizontalAlignment="Center" Foreground="DarkRed"/>
-        <Button Grid.Row="5"  Command="{Binding LoginCheckCommand}" Background="#2C5066" Foreground="White" Content="entrar" Width="150" Height="40" FontSize="18" BorderBrush="{x:Null}"/>
+        <Button Grid.Row="5"  Command="{Binding LoginCheckCommand}" Background="#2C5066"  Foreground="White" Content="Iniciar Sesión" Width="200" Height="40" FontSize="24" BorderBrush="{x:Null}"/>
 
     </Grid>
 

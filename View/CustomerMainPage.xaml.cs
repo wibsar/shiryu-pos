@@ -51,5 +51,10 @@ namespace Shiryu
                 MainWindowViewModel.GetInstance().Code = "Espacio inválido!";
             }
         }
+
+        private void VendorData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

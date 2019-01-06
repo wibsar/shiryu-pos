@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Shiryu"
       xmlns:athena="clr-namespace:Athena;assembly=Athena"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="950" d:DesignWidth="1280"
       d:DataContext="{d:DesignInstance athena:MainWindowViewModel}"
       Title="UserDetailPage">
     <Page.Resources>
@@ -17,24 +17,24 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
         <Style TargetType="{x:Type PasswordBox}">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontSize" Value="24"/>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
     </Page.Resources>
@@ -44,13 +44,13 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".5*"></RowDefinition>
-            <RowDefinition Height="8*"></RowDefinition>
-            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <!-- header -->
-        <TextBlock Grid.Row="0" Text="USUARIO" FontSize="24"></TextBlock>
+        <TextBlock Grid.Row="0" Text="USUARIO" FontSize="24" Margin="20,0"></TextBlock>
 
 
         <Grid Grid.Row="1" Margin="5">
@@ -61,10 +61,10 @@
 
             <Grid Grid.Column="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="28*"></ColumnDefinition>
-                    <ColumnDefinition Width="235*"/>
-                    <ColumnDefinition Width="527*"/>
-
+                    <ColumnDefinition Width="49*"></ColumnDefinition>
+                    <ColumnDefinition Width="205*"/>
+                    <ColumnDefinition Width="508*"/>
+                    <ColumnDefinition Width="508*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
 
@@ -76,28 +76,29 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
 
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Text="Registro de Usuario" Margin="50,0,0,0" Foreground="Gray" Grid.Column="2"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="2" Text="Nombre"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="2" Text="Correo Electrónico"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="3"  Grid.ColumnSpan="2" Text="Teléfono"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="4"  Grid.ColumnSpan="2" Text="Nivel de Acceso"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="5"  Grid.ColumnSpan="2" Text="Usuario"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="6"  Grid.ColumnSpan="2" Text="Contraseña"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="7"  Grid.ColumnSpan="2" Text="Confirmar Contraseña"></TextBlock>
+                <TextBlock Grid.Row="0" Text="Registro de Usuario" Margin="48,15,252,15" HorizontalAlignment="Center" Foreground="Gray" Grid.Column="2"/>
+                <TextBlock Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="3" Text="Nombre" Margin="0,15"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="3" Text="Correo Electrónico" Margin="0,16,0,15"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="3"  Grid.ColumnSpan="3" Text="Teléfono" Margin="0,15"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="4"  Grid.ColumnSpan="3" Text="Nivel de Acceso" Margin="0,16,0,15"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="5"  Grid.ColumnSpan="3" Text="Usuario" Margin="0,15"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="6"  Grid.ColumnSpan="3" Text="Contraseña" Margin="0,16,0,15"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="7"  Grid.ColumnSpan="3" Text="Confirmar Contraseña" Margin="0,15"></TextBlock>
 
                 <TextBox Grid.Row="1" Grid.Column="2" Margin="5" MaxHeight="45" Text="{Binding UserTemporalItem.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="2" Margin="5" MaxHeight="45" Text="{Binding UserTemporalItem.Email, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsNoSpaceEvent" ></TextBox>
                 <TextBox Grid.Row="3" Grid.Column="2" Margin="5" MaxHeight="45" Text="{Binding UserTemporalItem.Phone, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <ComboBox Grid.Row="4" Grid.Column="2" Margin="5" MaxHeight="45" ItemsSource="{Binding UserAccessLevelTypes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem ="{Binding UserTemporalItem.Rights, Mode=TwoWay}" FontSize="20" VerticalContentAlignment="Center" FontFamily="/Shiryu;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
                 <TextBox Grid.Row="5" Grid.Column="2" Margin="5" MaxHeight="45" Text="{Binding UserTemporalItem.UserName, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsNoSpaceEvent" CharacterCasing="Lower"></TextBox>
-                <PasswordBox Grid.Row="6" Grid.Column="2" x:Name="PasswordBox" PasswordChar="•" Height="45" VerticalContentAlignment="Center" Margin="5" PasswordChanged="PasswordBox_OnPasswordChanged"  />
-                <PasswordBox Grid.Row="7" Grid.Column="2" x:Name="PasswordVerificationBox" Height="45" Margin="5" PasswordChar="•" VerticalContentAlignment="Center" PasswordChanged="PasswordVerificationBox_OnPasswordChanged"></PasswordBox>
+                <PasswordBox Grid.Row="6" Grid.Column="2" x:Name="PasswordBox" PasswordChar="•" Height="44" VerticalContentAlignment="Center" Margin="5,8" PasswordChanged="PasswordBox_OnPasswordChanged"  />
+                <PasswordBox Grid.Row="7" Grid.Column="2" x:Name="PasswordVerificationBox" Height="45" Margin="5,7" PasswordChar="•" VerticalContentAlignment="Center" PasswordChanged="PasswordVerificationBox_OnPasswordChanged"></PasswordBox>
             </Grid>
         </Grid>
-
+        <!-- footer menu -->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
@@ -106,34 +107,34 @@
                 <ColumnDefinition Width="*"/>
 
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Command="{Binding ChangePageCommand}" CommandParameter="users" Background="{x:Null}" BorderBrush="{x:Null}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="..\Resources\Images\Cancel.png" ></Image>
-                    <TextBlock Grid.Row="1" Text="Cancelar"></TextBlock>
+            <Button Grid.Column="1" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ChangePageCommand}" CommandParameter="users" HorizontalAlignment="Center" Width="200" Margin="5">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Cancel.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Cancelar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Command="{Binding UserDeleteCommand}" Background="{x:Null}" BorderBrush="{x:Null}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="..\Resources\Images\delete.png"></Image>
-                    <TextBlock Grid.Row="1" Text="Eliminar"></TextBlock>
+            <Button Grid.Column="2" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding UserDeleteCommand}" HorizontalAlignment="Center" Width="200" Margin="5">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Delete.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Eliminar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Command="{Binding UserSaveChangesCommand}" Background="{x:Null}" BorderBrush="{x:Null}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="..\Resources\Images\Guardar.png"></Image>
-                    <TextBlock Grid.Row="1" Text="Guardar"></TextBlock>
+            <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding UserSaveChangesCommand}" Width="200" Margin="5" >
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\guardar.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Guardar" ></TextBlock>
                 </Grid>
             </Button>
         </Grid>

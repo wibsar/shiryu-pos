@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{355E44DA-95A8-41FD-BE7F-C1AD48F5417C}</ProjectGuid>
+    <ProjectGuid>{F8ED9799-C41C-4707-A501-6F2891E08034}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Seiya</RootNamespace>
     <AssemblyName>Seiya</AssemblyName>
@@ -481,6 +481,9 @@
     <Resource Include="Resources\Images\Login logo.png" />
     <Resource Include="Resources\Images\Logo Wibsar Retail.png" />
     <Resource Include="Resources\Images\lupa activa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\import.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

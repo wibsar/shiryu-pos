@@ -7,7 +7,7 @@
       xmlns:athena="clr-namespace:Athena;assembly=Athena"
       mc:Ignorable="d" 
       d:DataContext="{d:DesignInstance athena:SystemViewModel}"
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="950" d:DesignWidth="1280"
       Title="System Page">
 
     <Page.Resources>
@@ -18,40 +18,40 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
         <Style TargetType="ComboBox">
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
         </Style>
     </Page.Resources>
 
     <Grid ShowGridLines="false" Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height=".5*"></RowDefinition>           
-            <RowDefinition Height="8*"></RowDefinition>
-            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>           
+            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <!-- header -->
-        <TextBlock Grid.Row="0" Text="SISTEMA" FontSize="24"></TextBlock>
+        <TextBlock Grid.Row="0" Text="SISTEMA" FontSize="24" Margin="20,0"></TextBlock>
         <Grid Grid.Row="1">
             <TabControl BorderBrush="{x:Null}">
                 <!--TAB Configuracion de Ticket-->
-                <TabItem  Header="Configuración del Ticket" Height="30" Background="#FFF3F3F3" Foreground="#2C5066" BorderBrush="{x:Null}">
+                <TabItem  Header="Configuración del Ticket" FontSize="24" Height="40" Background="#FFF3F3F3" Foreground="#2C5066" BorderBrush="{x:Null}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -76,10 +76,11 @@
                                 <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="3*"></RowDefinition>
                             </Grid.RowDefinitions>
 
                             <!-- List of items -->
-                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre de la impresora" FontSize="18"></TextBlock>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre de la impresora" FontSize="24"></TextBlock>
                             <TextBlock Grid.Row="1" Grid.Column="0" Background="LightGray" Height="2" VerticalAlignment="Top"></TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="0" Text="RFC"></TextBlock>
                             <TextBlock Grid.Row="3" Grid.Column="0" Text="Razón Social"></TextBlock>
@@ -93,7 +94,7 @@
                             <TextBlock Grid.Row="11" Grid.Column="0" Text="Mensaje Pie de Ticket"></TextBlock>
 
                             <!-- Users input -->
-                            <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Printers, Mode=TwoWay}" SelectedItem="{Binding PrinterName, Mode=TwoWay}" Margin="0,0,5,0" MinHeight="30" VerticalContentAlignment="Center"></ComboBox>
+                            <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Printers, Mode=TwoWay}" SelectedItem="{Binding PrinterName, Mode=TwoWay}" Margin="0,0,5,0" MinHeight="40" VerticalContentAlignment="Center"></ComboBox>
                             <TextBlock Grid.Row="1" Grid.Column="1" Background="LightGray" Height="2" VerticalAlignment="Top"></TextBlock>
                             <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FiscalNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsNoSpaceEvent" Margin="0,5,5,0"></TextBox>
                             <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding FiscalName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" Margin="0,5,5,0"></TextBox>
@@ -109,7 +110,7 @@
                     </Grid>
                     <!--TAB Avanzado-->
                 </TabItem>
-                <TabItem Header="Avanzado" Height="30" Background="#FFF3F3F3" Foreground="#2C5066"  BorderBrush="{x:Null}">
+                <TabItem Header="Avanzado" FontSize="24" Height="40" Background="#FFF3F3F3" Foreground="#2C5066"  BorderBrush="{x:Null}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*"></RowDefinition>
@@ -128,7 +129,7 @@
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" Text="Agregar Logotipo:" MinWidth="350" TextAlignment="Right"></TextBlock>
-                                <Button  Command="{Binding SystemSaveLogoCommand}" CommandParameter="add" Grid.Column="1" Margin="50,0,0,5"  Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left">
+                                <Button  Command="{Binding SystemSaveLogoCommand}" CommandParameter="add" Grid.Column="1" Margin="50"  Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left">
                                     <Image Source="..\Resources\Images\AddPhoto.png"></Image>
                                 </Button>
                             </Grid>
@@ -152,8 +153,8 @@
                                 </Grid.RowDefinitions>
                                 <TextBlock Text="Correo:" HorizontalAlignment="Right" ></TextBlock>
                                 <TextBlock Grid.Column="0" Grid.Row="1" Text="Contraseña:" HorizontalAlignment="Right" ></TextBlock>
-                                <TextBox Grid.Column="1" Grid.Row="0" MinWidth="320" Height="30" Text="{Binding EmailSender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="50,0,0,5"></TextBox>
-                                <TextBox Grid.Column="1" Grid.Row="1" MinWidth="320" Height="30" Text="{Binding EmailSenderPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="50,0,0,5"></TextBox>
+                                <TextBox Grid.Column="1" Grid.Row="0" MinWidth="320" Height="40" Text="{Binding EmailSender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="50,0,0,5"></TextBox>
+                                <TextBox Grid.Column="1" Grid.Row="1" MinWidth="320" Height="40" Text="{Binding EmailSenderPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="50,0,0,5"></TextBox>
                             </Grid>
                         </Grid>
                         <!--Correo Pedidos-->
@@ -163,7 +164,7 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Text="Correo Entrante General" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"></TextBlock>
-                            <TextBox Grid.Column="1" MinWidth="320" Height="30" Text="{Binding EmailReports, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="50,0,0,0"></TextBox>                                                          
+                            <TextBox Grid.Column="1" MinWidth="320" Height="40" Text="{Binding EmailReports, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="50,0,0,0"></TextBox>                                                          
                         </Grid>
                         <!--Correo General-->
                         <Grid Grid.Row="3" Background="#FFF0F0F0">
@@ -172,7 +173,7 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Text="Correo Entrante Pedidos" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"></TextBlock>
-                            <TextBox Grid.Column="1" MinWidth="320" Height="30" Text="{Binding EmailOrders, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="50,0,0,0"></TextBox>
+                            <TextBox Grid.Column="1" MinWidth="320" Height="40" Text="{Binding EmailOrders, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="50,0,0,0"></TextBox>
                         </Grid>
                         <!--Valor de Descuento-->
                         <Grid Grid.Row="4">
@@ -187,7 +188,7 @@
                                     <ColumnDefinition Width="50"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <TextBox Grid.Column="1" Width="50" Height="30" Text="{Binding DiscountPercent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" HorizontalContentAlignment="Center"></TextBox>
+                                <TextBox Grid.Column="1" Width="50" Height="40" Text="{Binding DiscountPercent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" HorizontalContentAlignment="Center"></TextBox>
                                 <TextBlock Grid.Column="2" Text="%" Margin="5,0,0,0"></TextBlock>
                             </Grid>
                         </Grid>
@@ -204,7 +205,7 @@
                                     <ColumnDefinition Width="50"></ColumnDefinition>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <TextBox Grid.Column="1" Width="50" Height="30" Text="{Binding PointsPercent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" HorizontalContentAlignment="Center"></TextBox>
+                                <TextBox Grid.Column="1" Width="50" Height="40" Text="{Binding PointsPercent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" HorizontalContentAlignment="Center"></TextBox>
                                 <TextBlock Grid.Column="2" Text="%" Margin="5,0,0,0"></TextBlock>
                             </Grid>                            
                         </Grid>                        
@@ -222,14 +223,14 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Foreground="LightGray" FontSize="18" HorizontalAlignment="Right" Text="Wibsar Retail V."></TextBlock>
             <TextBlock Grid.Column="1" Foreground="LightGray" FontSize="18" HorizontalAlignment="Left" Margin="5,0,0,0" Text="{Binding Version}"></TextBlock>
-            <Button Grid.Column="2" Command="{Binding SystemSaveChangesCommand}"  Background="{x:Null}" BorderBrush="{x:Null}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="..\Resources\Images\Guardar.png"></Image>
-                    <TextBlock Grid.Row="1" Text="Guardar" HorizontalAlignment="Center" FontSize="16"></TextBlock>
+            <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding SystemSaveChangesCommand}" HorizontalAlignment="Center" MinWidth="200" Margin="5" >
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Guardar.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Guardar" ></TextBlock>
                 </Grid>
             </Button>
 

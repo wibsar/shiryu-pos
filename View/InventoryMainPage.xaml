@@ -7,7 +7,7 @@
       xmlns:athena="clr-namespace:Athena;assembly=Athena"
       mc:Ignorable="d" 
       d:DataContext="{d:DesignInstance athena:MainWindowViewModel}"
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="950" d:DesignWidth="1280"
       Title="InventoryMainPage">
     <Page.Resources>
         <Style TargetType="Page">
@@ -17,23 +17,24 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
         <Style TargetType="{x:Type DataGrid}">
             <Setter Property="Background" Value="#FFF" />
             <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontSize" Value="18"></Setter>
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="AlternationCount" Value="2" />
             <Setter Property="VerticalGridLinesBrush" Value="#FFE8E8E8"></Setter>
@@ -66,9 +67,9 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".5*"></RowDefinition>
-            <RowDefinition Height="8*"></RowDefinition>
-            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
 
         </Grid.RowDefinitions>
 
@@ -79,8 +80,8 @@
                 <ColumnDefinition Width="6*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="INVENTARIO"></TextBlock>
-            <TextBox Grid.Column="1" x:Name="InventorySearchTextBox" Text="{Binding InventorySearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center"/>
+            <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="INVENTARIO" Margin="20,0"></TextBlock>
+            <TextBox Grid.Column="1" x:Name="InventorySearchTextBox" Height="40" Text="{Binding InventorySearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center"/>
             <Button Grid.Column="2" Command="{Binding InventoryStartSearchCommand}" CommandParameter="{Binding InventorySearchText}">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
             </Button>
@@ -98,74 +99,67 @@
                 <DataGridTextColumn Binding="{Binding TotalQuantityAvailable}" ClipboardContentBinding="{x:Null}" Header=" Existencia Total " IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-
-        <!-- Inventory options -->
-        <Grid Grid.Row="2" ShowGridLines="False" Margin="0,3,0,0">
+        <!-- footer menu -->
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" HorizontalAlignment="Left" Margin="20,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding ExportDataBaseCommand}" CommandParameter="save_inventory">
+            <Button Grid.Column="0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ExportDataBaseCommand}" CommandParameter="save_inventory" HorizontalAlignment="Left" MinWidth="200" Margin="20,5">
+                <Grid Margin="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Export.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" FontSize="16" Text="Exportar" ></TextBlock>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="17"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_add_clone">
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Exportar" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button Grid.Column="2" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_add_clone" HorizontalAlignment="Center" MinWidth="200" Margin="5">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Clonar.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" Text="Clonar"></TextBlock>
-            </Grid>
-
-            <Grid Grid.Column="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding InventoryAddItemToCartCommand}" CommandParameter="{Binding SelectedInventoryProduct}">
-                    <Image Source="..\Resources\Images\Add Cart.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" Text="Al Carrito"></TextBlock>
-            </Grid>
-
-            <Grid Grid.Column="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="17"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding InventoryAddNewItemCommand}" CommandParameter="inventory_add">
-                    <Image Source="..\Resources\Images\agregar.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" Text="Nuevo"></TextBlock>
-            </Grid>
-
-            <Grid Grid.Column="4">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="4*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_details">
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Clonar" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding InventoryAddItemToCartCommand}" CommandParameter="{Binding SelectedInventoryProduct}" HorizontalAlignment="Center" MinWidth="200" Margin="5">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\add cart.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Al Carrito" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button Grid.Column="4" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding InventoryAddNewItemCommand}" CommandParameter="inventory_add" HorizontalAlignment="Center" MinWidth="200" Margin="5">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Agregar.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Nuevo" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button Grid.Column="5" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_details" HorizontalAlignment="Center" MinWidth="200" Margin="5" >
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Detalles.png"></Image>
-                </Button>
-                <TextBlock TextAlignment="Center" Grid.Row="1" Text="Detalle"></TextBlock>
-            </Grid>
-
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Detalles" ></TextBlock>
+                </Grid>
+            </Button>
         </Grid>
     </Grid>
 </Page>

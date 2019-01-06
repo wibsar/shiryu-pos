@@ -7,7 +7,7 @@
       xmlns:athena="clr-namespace:Athena;assembly=Athena"
       mc:Ignorable="d" 
       d:DataContext="{d:DesignInstance athena:MainWindowViewModel}"
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="950" d:DesignWidth="1280"
       Title="PaymentPage"
       FontFamily="..\Resources\Fonts\#Comfortaa">
 
@@ -19,18 +19,18 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="/Shiryu;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
     </Page.Resources>
@@ -41,16 +41,16 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>            
+            <RowDefinition Height="2*"></RowDefinition>            
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="8*"></RowDefinition>            
-            <RowDefinition Height="2.8*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <!--Display client information-->
         <Grid Grid.Row="0">
-            <TextBlock Text="{Binding CurrentCustomer.Name}" HorizontalAlignment="Center" Foreground="Gray"></TextBlock>
+            <TextBlock Text="{Binding CurrentCustomer.Name, StringFormat='Cliente: {0}'}" HorizontalAlignment="Center" Foreground="Gray"></TextBlock>
         </Grid>
       
         
@@ -89,8 +89,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>                    
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column ="0" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Efectivo Pesos"></TextBlock>
                 <TextBox Grid.Row="1" Grid.Column ="0" Margin="5,5,5,5" FontSize="24" Foreground="Red" Text="{Binding PaymentPartialCashMXN, Mode=TwoWay, StringFormat='${0}'}" MinHeight="40" MaxWidth="150" VerticalAlignment="Top" HorizontalContentAlignment="Center"></TextBox>

@@ -62,5 +62,10 @@ namespace Shiryu
             var color = new BrushConverter();
             ((TextBox) sender).Foreground = (Brush) color.ConvertFrom("#FF2C5066");
         }
+
+        private void ProductListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
